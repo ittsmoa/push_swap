@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_and_swap.c                                    :+:      :+:    :+:   */
+/*   push_chunks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moatieh <moatieh@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 05:08:24 by moatieh           #+#    #+#             */
-/*   Updated: 2025/12/03 05:08:24 by moatieh          ###   ########.fr       */
+/*   Created: 2025/12/05 05:52:03 by moatieh           #+#    #+#             */
+/*   Updated: 2025/12/05 05:52:03 by moatieh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void    pa(t_stack *a, t_stack *b)
+int get_chunk_size(int size)
 {
-    t_node *n;
-
-    if (b->top == NULL)
-        return;
-    n = pop(b);
-    push_top(a, n);
-    write(1, "pa\n", 3);
+    
 }
-void    pb(t_stack *a, t_stack *b)
-{
-    t_node *n;
-
-    if (a->top == NULL)
-        return;
-    n = pop(a);
-    push_top(b, n);
-    write(1, "pb\n", 3);
-}
-

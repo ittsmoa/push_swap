@@ -47,5 +47,12 @@ void	init_stack(t_stack *stack);
 void	push_top(t_stack *stack, t_node *new);
 t_node	*pop(t_stack *stack);
 void	fill_stack_a(t_stack *a, int argc, char **argv);
+void free_stack(t_stack *s);
+void print_stack(t_stack *s);
+int *stackToArray(t_stack *a);
+void	indexTheStack(t_stack *a);
+void    sortArray(int *arr, int size);
+void applyIndexToStack(t_stack *a, int *arr, int size);
+
 
 #endif
