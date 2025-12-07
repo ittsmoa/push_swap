@@ -41,14 +41,14 @@ void	indexTheStack(t_stack *a)
 		return;
 	sortArray(arr, a->size);
 	applyIndexToStack(a, arr, a->size);
-	free (arr);
+	free(arr);
 }
 
 void    sortArray(int *arr, int size)
 {
 	int	i;
 	int	j;
-	int	temp;
+	int temp;
 
 	i = 0;
 	while(i < size - 1)
@@ -88,5 +88,4 @@ void applyIndexToStack(t_stack *a, int *arr, int size)
 		}
 		temp = temp->next;
 	}
-
 }
