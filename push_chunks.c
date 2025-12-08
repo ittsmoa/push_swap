@@ -87,22 +87,24 @@ void    moveChunkElementToTop(t_stack *a, int start, int end)
 
 void pushAllChunks(t_stack *a, t_stack *b)
 {
-    int chunk_size;
+    int chunkSize;
     int start;
     int end;
+    int maxIndex;
 
     if (!a || a->size == 0)
         return;
-    chunk_size = getChunkSize(a->size);
+    maxIndex = a->size - 1;
+    chunkSize = getChunkSize(a->size);
     start = 0;
-    end = chunk_size - 1;
-    while (start < a->size)
+    end = start + chunkSize - 1;
+    while (start < maxIndex)
     {
-        if (end >= a->size)
-            end = a->size - 1;
+        if (end >= maxIndex)
+            end = maxIndex;
         pushChunkToB(a, b, start, end);
         start = end + 1;
-        end = start + chunk_size - 1;
+        end = start + chunkSize - 1;
     }
 }
 
