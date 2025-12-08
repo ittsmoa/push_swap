@@ -62,7 +62,7 @@ void	push_swap(t_stack *a, t_stack *b)
 
 	pushAllChunks(a, b);   // كل chunk تروح على B
 
-	pushBackToA(a, b);     //   A مرتّبة
+	pushBackToA(a, b); 
 }
 
 // my main main
