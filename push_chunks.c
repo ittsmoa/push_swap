@@ -35,15 +35,15 @@ int raOrRra(t_stack *a, int start, int end)
     while (temp)
     {
         if (isINChunk(temp->index, start, end))
-            break
+            break;
         pos++;
         temp = temp->next;
     }
     if (!temp)
         return 0;
 
-    if (pos <= a->size / 2)
-        return 0
+    if (pos <= (a->size / 2))
+        return 0;
     return 1;
 }
 
@@ -85,4 +85,24 @@ void    moveChunkElementToTop(t_stack *a, int start, int end)
     }
 }
 
+void pushAllChunks(t_stack *a, t_stack *b)
+{
+    int chunk_size;
+    int start;
+    int end;
+
+    if (!a || a->size == 0)
+        return;
+    chunk_size = getChunkSize(a->size);
+    start = 0;
+    end = chunk_size - 1;
+    while (start < a->size)
+    {
+        if (end >= a->size)
+            end = a->size - 1;
+        pushChunkToB(a, b, start, end);
+        start = end + 1;
+        end = start + chunk_size - 1;
+    }
+}
 

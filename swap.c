@@ -30,15 +30,18 @@ static void do_swap(t_stack *stack)
 void    sa(t_stack *a)
 {
     do_swap(a);
+    write(1, "sa\n", 3);
 }
 
 void    sb(t_stack *b)
 {
     do_swap(b);
+    write(1, "sb\n", 3);
 }
 
 void    ss(t_stack *a, t_stack *b)
 {
     do_swap(a);
     do_swap(b);
+    write(1, "ss\n", 3);
 }
