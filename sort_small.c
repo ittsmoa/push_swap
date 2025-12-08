@@ -49,15 +49,15 @@ int findMinPos(t_stack *a)
     int i;
 
     temp = a->top;
-    min = temp->index;
+    min = temp->value;
     pos = 0;
     i = 0;
 
     while (temp)
     {
-        if (temp->index < min)
+        if (temp->value < min)
         {
-            min = temp->index;
+            min = temp->value;
             pos = i;
         }
         temp = temp->next;

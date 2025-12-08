@@ -106,6 +106,8 @@ int main(int argc, char **argv)
     printf("===================\n\n");
 
     // Call your push_swap algorithm
+	printf("SIZE = %d\n", a.size);
+
     push_swap(&a, &b);
 
     // Print AFTER sorting

@@ -98,7 +98,7 @@ void pushAllChunks(t_stack *a, t_stack *b)
     chunkSize = getChunkSize(a->size);
     start = 0;
     end = start + chunkSize - 1;
-    while (start < maxIndex)
+    while (start <= maxIndex)
     {
         if (end >= maxIndex)
             end = maxIndex;
