@@ -12,19 +12,76 @@
 
 #include "push_swap.h"
 
+static void	error_exit(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+static int	ft_atoi(const char *nptr)
+{
+	long	nb;
+	int		i;
+	int		si;
+
+	nb = 0;
+	i = 0;
+	si = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			si *= -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		nb = nb * 10;
+		nb = nb + nptr[i] - '0';
+		i++;
+	}
+	return (nb * si);
+}
+
+static int	has_duplicate(t_stack *a, int value)
+{
+	t_node *current;
+
+	current = a->top;
+	while (current)
+	{
+		if (current->value == value)
+			return (1);
+		current = current->next;
+	}
+	return (0);
+}
+
+
 void	fill_stack_a(t_stack *a, int argc, char **argv)
 {
-	int	i = argc - 1;
+	int		i;
+	int		num;
+	t_node	*new;
+
+	i = argc - 1;
 	while (i > 0)
 	{
-		int num;
+		num = ft_atoi(argv[i]);
 
-		num = atoi(argv[i]);
-		t_node *new = create_node(num);
+		if (has_duplicate(a, num))
+			error_exit();
+
+		new = create_node(num);
+		if (!new)
+			error_exit();
+
 		push_top(a, new);
 		i--;
 	}
 }
+
 
 t_node *create_node(int value)
 {

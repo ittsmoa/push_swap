@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-
 static int	is_sorted(t_stack *a)
 {
 	t_node *tmp;
@@ -65,27 +64,6 @@ void	push_swap(t_stack *a, t_stack *b)
 	pushBackToA(a, b); 
 }
 
-// my main main
-// int	main(int argc, char **argv)
-// {
-// 	t_stack	a;
-// 	t_stack	b;
-
-// 	if (argc < 2)
-// 		return (0);
-
-// 	init_stack(&a);
-// 	init_stack(&b);
-
-// 	fill_stack_a(&a, argc, argv);  // تحويل argv إلى stack A
-
-// 	push_swap(&a, &b);             // تنفيذ الخوارزمية كاملة
-
-// 	free_stack(&a);                // مهم جداً لمنع الـ LEAKS!!!
-// 	free_stack(&b);
-
-// 	return (0);
-// }
 
 int main(int argc, char **argv)
 {
