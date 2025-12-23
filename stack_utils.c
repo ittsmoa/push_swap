@@ -14,15 +14,15 @@
 
 void	fill_stack_a(t_stack *a, int argc, char **argv)
 {
-	int	i = 1;
-	while (i < argc)
+	int	i = argc - 1;
+	while (i > 0)
 	{
 		int num;
 
 		num = atoi(argv[i]);
 		t_node *new = create_node(num);
 		push_top(a, new);
-		i++;
+		i--;
 	}
 }
 

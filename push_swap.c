@@ -100,22 +100,22 @@ int main(int argc, char **argv)
 
     fill_stack_a(&a, argc, argv);
 
-    // Print BEFORE sorting
-    printf("=== BEFORE SORT ===\n");
-    print_stack(&a);
-    printf("===================\n\n");
+    // // Print BEFORE sorting
+    // printf("=== BEFORE SORT ===\n");
+    // print_stack(&a);
+    // printf("===================\n\n");
 
-    // Call your push_swap algorithm
-	printf("SIZE = %d\n", a.size);
+    // // Call your push_swap algorithm
+	// printf("SIZE = %d\n", a.size);
 
     push_swap(&a, &b);
 
     // Print AFTER sorting
-    printf("=== AFTER SORT ===\n");
-    print_stack(&a);
-    printf("==================\n");
+    // printf("=== AFTER SORT ===\n");
+    // print_stack(&a);
+    // printf("==================\n");
 
-    // Free stacks
+    
     free_stack(&a);
     free_stack(&b);
 

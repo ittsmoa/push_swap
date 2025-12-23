@@ -35,7 +35,7 @@ int findPosInB(t_stack *b, int index)
     t_node  *temp;
     int pos;
     if (!b || !b->top)
-        return -1;
+        return / 5-1;
     temp = b->top;
     pos = 0;
     while (temp)
