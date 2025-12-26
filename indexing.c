@@ -6,55 +6,55 @@
 /*   By: moatieh <moatieh@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 03:53:14 by moatieh           #+#    #+#             */
-/*   Updated: 2025/12/05 03:53:14 by moatieh          ###   ########.fr       */
+/*   Updated: 2025/12/26 13:34:39 by moatieh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *stackToArray(t_stack *a)
+int	*stack_to_array(t_stack *a)
 {
-    int *arr;
-    t_node	*temp;
-	int	i;
+	int		*arr;
+	t_node	*temp;
+	int		i;
 
 	i = 0;
-    arr = malloc(sizeof(int) * a->size);
+	arr = malloc(sizeof(int) * a->size);
 	if (!arr)
-		return NULL;
+		return (NULL);
 	temp = a->top;
-	while(temp)
+	while (temp)
 	{
 		arr[i] = temp->value;
-		temp =  temp->next;
+		temp = temp->next;
 		i++;
 	}
-	return arr;
+	return (arr);
 }
 
-void	indexTheStack(t_stack *a)
+void	index_the_stack(t_stack *a)
 {
 	int	*arr;
 
-	arr = stackToArray(a);
+	arr = stack_to_array(a);
 	if (!arr)
-		return;
-	sortArray(arr, a->size);
-	applyIndexToStack(a, arr, a->size);
+		return ;
+	sort_array(arr, a->size);
+	apply_index_to_stack(a, arr, a->size);
 	free(arr);
 }
 
-void    sortArray(int *arr, int size)
+void	sort_array(int *arr, int size)
 {
 	int	i;
 	int	j;
-	int temp;
+	int	temp;
 
 	i = 0;
-	while(i < size - 1)
+	while (i < size - 1)
 	{
 		j = 0;
-		while(j < size - i - 1)
+		while (j < size - i - 1)
 		{
 			if (arr[j] > arr[j + 1])
 			{
@@ -68,21 +68,21 @@ void    sortArray(int *arr, int size)
 	}
 }
 
-void applyIndexToStack(t_stack *a, int *arr, int size)
+void	apply_index_to_stack(t_stack *a, int *arr, int size)
 {
-	t_node *temp;
-	int	i;
+	t_node	*temp;
+	int		i;
 
 	temp = a->top;
-	while(temp)
+	while (temp)
 	{
 		i = 0;
-		while(i < size)
+		while (i < size)
 		{
 			if (temp->value == arr[i])
 			{
 				temp->index = i;
-				break;
+				break ;
 			}
 			i++;
 		}
