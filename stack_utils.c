@@ -14,26 +14,16 @@
 
 static void	error_exit(void)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	int	i;
+	int	num;
 
-static int	ft_atoi(const char *nptr)
-{
-	long	nb;
-	int		i;
-	int		si;
-
-	nb = 0;
-	i = 0;
-	si = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	i = argc - 1;
+	while (i > 0)
 	{
-		if (nptr[i] == '-')
-			si *= -1;
-		i++;
+		num = atoi(argv[i]);
+		t_node *new = create_node(num);
+		push_top(a, new);
+		i--;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{

@@ -65,6 +65,7 @@ void	push_swap(t_stack *a, t_stack *b)
 }
 
 
+
 int main(int argc, char **argv)
 {
     t_stack a;
@@ -77,25 +78,43 @@ int main(int argc, char **argv)
     init_stack(&b);
 
     fill_stack_a(&a, argc, argv);
-
-    // // Print BEFORE sorting
-    // printf("=== BEFORE SORT ===\n");
-    // print_stack(&a);
-    // printf("===================\n\n");
-
-    // // Call your push_swap algorithm
-	// printf("SIZE = %d\n", a.size);
-
     push_swap(&a, &b);
 
-    // Print AFTER sorting
-    // printf("=== AFTER SORT ===\n");
-    // print_stack(&a);
-    // printf("==================\n");
-
-    
     free_stack(&a);
     free_stack(&b);
 
-    return 0;
+    return (0);
 }
+
+
+// int main(int argc, char **argv)
+// {
+//     t_stack a;
+//     t_stack b;
+
+//     if (argc < 2)
+//         return (0);
+
+//     init_stack(&a);
+//     init_stack(&b);
+
+//     fill_stack_a(&a, argc, argv);
+
+//     printf("=== BEFORE SORT ===\n");
+//     print_stack(&a);
+//     printf("===================\n\n");
+
+//     printf("SIZE = %d\n\n", a.size);
+
+//     push_swap(&a, &b);
+
+//     printf("=== AFTER SORT ===\n");
+//     print_stack(&a);
+//     printf("===================\n");
+
+//     free_stack(&a);
+//     free_stack(&b);
+
+//     return 0;
+// }
+
